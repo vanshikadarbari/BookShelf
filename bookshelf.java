@@ -1,6 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+
 
 class book
 {
@@ -30,32 +29,32 @@ class Bookshelf
     public static void main(String[] args)
             throws IOException
     {
-        Scanner sc=new Scanner(System.in);
+        BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter number of users.");
-        int n=sc.nextInt();
+        int n=Integer.parseInt(sc.readLine());
         for(int i=1;i<=n;i++)
         {
             System.out.println("What is your name?");
-            String name=sc.next();
+            String name=sc.readLine();
             String fname=name+".txt";
             PrintWriter writer = new PrintWriter(fname, "UTF-8");
 
             System.out.println("How many books do you want to input?");
-            int nob=sc.nextInt();
-            sc.nextLine();
+            int nob=Integer.parseInt(sc.readLine());
             for(int j=0;j<nob;j++)
             {
                 System.out.println("Enter the title of the book.");
-                String title=sc.next();
+                String title=sc.readLine();
+               // sc.nextLine();
 
                 System.out.println("Enter the author of the book.");
-                String author=sc.next();
+                String author=sc.readLine();
 
                 System.out.println("Enter the genre.");
-                String genre=sc.next();
+                String genre=sc.readLine();
 
                 System.out.println("How much would you rate it on a scale from 1-5, with 1 being the lowest?");
-                int rate=sc.nextInt();
+                int rate=Integer.parseInt(sc.readLine());
 
                 book b=new book(title,author,genre,rate);
                 writer.println("Title: "+b.title);
