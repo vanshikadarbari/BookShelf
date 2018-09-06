@@ -41,7 +41,6 @@ class Bookshelf
             String fname=name+".txt";
             PrintWriter writer=null;
             FileWriter fw=null;
-            //BufferedWriter bw=null;
             boolean filexists;
             filexists = new File(fname).exists();
 
